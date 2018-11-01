@@ -149,7 +149,7 @@ namespace Trinity.Framework.Actors.Properties
 
                 if (actor.Type == TrinityObjectType.Destructible || actor.Type == TrinityObjectType.Barricade)
                 {
-                    if (actor.IsUntargetable || actor.IsInvulnerable || actor.HitPoints < double.Epsilon)
+                    if (actor.IsUntargetable || actor.IsInvulnerable || (actor.HitPointsMax > 0 && actor.HitPoints <= 0))
                         return true;
 
                     if (attributes.IsDeletedOnServer)

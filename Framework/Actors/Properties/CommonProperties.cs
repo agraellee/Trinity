@@ -43,7 +43,7 @@ namespace Trinity.Framework.Actors.Properties
 
                 if (inLineOfSight)
                 {
-                    actor.IsWalkable = grid.CanRayWalk(actor);
+                    actor.IsWalkable = Core.Grids.CanRayWalk(Core.Player.Position, actor.Position);
 
                     if (actor.IsWalkable)
                         actor.HasBeenWalkable = true;
